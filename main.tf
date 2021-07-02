@@ -15,4 +15,8 @@ data "aws_ami" "this" {
 resource "aws_instance" "this" {
   ami           = data.aws_ami.this.id
   instance_type = "t2.micro"
+
+  tags = {
+    Name = "Light"
+  }
 }
